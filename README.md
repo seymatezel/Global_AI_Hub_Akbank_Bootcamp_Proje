@@ -2,46 +2,35 @@
 Global AI Hub  Akbank Python ile Yapay Zekaya Giriş Bootcamp  Proje'si kapsamında hazırladığım bu proje; Ankara metro ağındaki en az aktarmalı ve en hızlı rotaları bulmamızı sağlıyor. BFS ve A* algoritmalarının  mantığından yararlanıldı. "metro_simülasyonu.py" ana kod dosyası. "README.md" proje dokümantasyonunu içen dosyadır. 
 # 1. Proje Başlığı ve Kısa Açıklama 
   ## Ankara Metrosu'nda En Az Aktarmalı ve En Hızlı Rota Hesaplama
+Bu projede; Ankara Metrosu’ndaki kırmızı, turuncu ve mavi hatları içeren bir proje geliştirdim. Öncelikle; her hattaki istasyonları tanımlayıp, hat içindeki bağlantıları oluşturdum. Daha sonra, hatlar arası geçişleri ekledim.
 
-     Bu projede; Ankara Metrosu’ndaki kırmızı, turuncu ve mavi hatları içeren bir proje geliştirdim. Öncelikle; her hattaki istasyonları tanımlayıp, hat içindeki bağlantıları oluşturdum. Daha sonra, hatlar arası geçişleri ekledim.
-     Metro ağı için üç farklı test senaryosu belirledim. Örneğin ilk senaryo, AŞTİ’den OSB’ye ulaşım için 'en az aktarmalı(BFS algoritması ile buluyor.)' ve 'en hızlı rotayı(A* algoritması ile buluyor.)' bulan bir algoritma geliştirdik.
+Metro ağı için üç farklı test senaryosu belirledim. Örneğin ilk senaryo, AŞTİ’den OSB’ye ulaşım için 'en az aktarmalı(BFS algoritması ile buluyor.)' ve 'en hızlı rotayı(A* algoritması ile buluyor.)' bulan bir algoritma geliştirdik.
 
 # 2. Kullanılan Teknolojiler ve Kütüphaneler
-
-      
-    Python: Projenin temel programlama dili.
-    collections.defaultdict: Hatlara göre istasyonları gruplamak için kullanıldı.
-    collections.deque kütüphanesi:** BFS algoritmasında kuyruk yapısını verimli bir şekilde hesaplamamız için kullanıldı, en az aktarmalı rotayı bulmamızı sağladı. 
-     heapq kütüphanesi: A* algoritmasında öncelik kuyruğu oluşturmak için kullanıldı, en hızlı rotayı daha verimli hesaplamamızı sağladı.
-     typing:Bu modül, yaygın tip tanımlayıcılarını içe aktarmada kullanıldı.
-     Dict:Sözlük yapısını belirtmek için kullanıldı.
-     List:İstasyonları ve rotaları listelemek için kullanıldı.
-     Set:Tekrarlayan öğeleri önlemek için kullanıldı.
-     Tuple: Değişmez veri yapıları gerektiğinde kullanıldı.
-     Optional:Bir değişkenin 'None' olabileceğini belirtmek için kullanıldı.
+Python: Projenin temel programlama dili.
+collections.defaultdict: Hatlara göre istasyonları gruplamak için kullanıldı.
+collections.deque kütüphanesi:** BFS algoritmasında kuyruk yapısını verimli bir şekilde hesaplamamız için kullanıldı, en az aktarmalı rotayı bulmamızı sağladı. 
+heapq kütüphanesi: A* algoritmasında öncelik kuyruğu oluşturmak için kullanıldı, en hızlı rotayı daha verimli hesaplamamızı sağladı.
+typing:Bu modül, yaygın tip tanımlayıcılarını içe aktarmada kullanıldı.
+Dict:Sözlük yapısını belirtmek için kullanıldı.
+List:İstasyonları ve rotaları listelemek için kullanıldı.
+Set:Tekrarlayan öğeleri önlemek için kullanıldı.
+Tuple: Değişmez veri yapıları gerektiğinde kullanıldı.
+Optional:Bir değişkenin 'None' olabileceğini belirtmek için kullanıldı.
 
 # 3. Algoritmaların Çalışma Mantığı
-
-     ## BFS (Genişlik Öncelikli Arama)
-
-         BFS algoritması, her adımda bir önceki istasyona en yakın istasyonları ekleyerek ilerler. Böylece en kısa mesafede ilerleyerek, en az aktarmalı rotayı bulmayı sağlar.
-
-     ## A* (A Yıldızı)
-
-          A algoritması, en hızlı rotayı bulmak için kullanıldı. Hedefe en yakın istasyonları öncelikli olarak ziyaret ediyor. Ayrıca, istasyonlar arasındaki geçiş sürelerini göz önünde bulundurarak en uygun yolu seçiyor.
-
-     ## Neden Bu Algoritmaları Seçtik?
-
-         * BFS, en az aktarmalı rotayı bulmak için ideal bir seçenek. Her zaman en kısa yolu bulabiliyor.
-         * A*, en hızlı rotayı bulmak için özellikle büyük ve karmaşık metro hatlarında çok etkilidir.
-         * Bu algoritmalar, yol bulma problemlerinde sık sık kullanılan temel algoritmalardır. Farklı ihtiyaçlara göre cevap verebilirler.
-
+## BFS (Genişlik Öncelikli Arama)
+BFS algoritması, her adımda bir önceki istasyona en yakın istasyonları ekleyerek ilerler. Böylece en kısa mesafede ilerleyerek, en az aktarmalı rotayı bulmayı sağlar.
+## A* (A Yıldızı)
+A algoritması, en hızlı rotayı bulmak için kullanıldı. Hedefe en yakın istasyonları öncelikli olarak ziyaret ediyor. Ayrıca, istasyonlar arasındaki geçiş sürelerini göz önünde bulundurarak en uygun yolu seçiyor.
+## Neden Bu Algoritmaları Seçtik?
+* BFS, en az aktarmalı rotayı bulmak için ideal bir seçenek. Her zaman en kısa yolu bulabiliyor.
+* A*, en hızlı rotayı bulmak için özellikle büyük ve karmaşık metro hatlarında çok etkilidir.
+* Bu algoritmalar, yol bulma problemlerinde sık sık kullanılan temel algoritmalardır. Farklı ihtiyaçlara göre cevap verebilirler.
 # 4.Örnek Kullanım ve Test Sonuçları
-
- Aşağıda projemdeki kodun nasıl çalıştığına dair örnek bir kullanım bulunuyor:
-
+Aşağıda projemdeki kodun nasıl çalıştığına dair örnek bir kullanım bulunuyor:
 """ python
-# Örnek Kullanım (Ana kodumdaki dosyadan aldım.)
+## Örnek Kullanım (Ana kodumdaki dosyadan aldım.)
 if __name__ == "__main__":#Metro ağını oluşturduk.Ankara Metrosu'ndaki istasyonlar ve bağlantıları yöneten sınıftır.
     metro = MetroAgi()
 
@@ -154,19 +143,19 @@ En az aktarmalı rota: Kızılay -> Ulus -> Demetevler
 En hızlı rota (10 dakika): Kızılay -> Ulus -> Demetevler
   
 
-## 5. Projeyi Geliştirme Fikirlerim
-    ##En az maliyetli rota fonksiyonu:
-         Kullanıcılar için, zaman yerine maliyetin önemli olabileceği durumlar göz önüne alınarak, "en az maliyetli" rotayı bulan bir fonksiyon eklenebilir. 
-         Maliyet; örneğin; ücretler, mesafe veya aktarma sayısı gibi faktörlere göre hesaplanabilir. Bu sayede, daha geniş bir kullanıcı kitlesine hitap edebilir.
-    ##Kullanıcı dostu bir arayüz:
-         Proje, bir web sitesi veya mobil uygulama olarak kullanıcı dostu bir arayüzle geliştirilebilir. Bu şekilde, metroyu kullanan herkesin kolayca erişebileceği bir platform haline getirilebilir. 
-        Örneğin, Moovit gibi uygulamalarla işbirliği yaparak, daha fazla kişiye ulaşılabilir ve kullanıcıların gerçek zamanlı olarak rota önerileri alması sağlanabilir.
-    ##Esnek rota seçme hakkı:
-         Kullanıcıların daha esnek bir rota seçmesi sağlanabilir. Örneğin, kullanıcıların belirli bir istasyonu istedikleri sırayla geçmesine izin veren bir sistem eklenebilir. 
-         Bu, BFS algoritmasıyla çalışacak şekilde tasarlanabilir
-    ##Gerçek hayat senaryoları için iyileştirmeler:
-          Proje, daha fazla istasyon ve karmaşık hat bağlantılarını içerecek şekilde geliştirilebilir. Gerçek hayat durumlarında, metro ağı daha karmaşık hale gelebilir, bu nedenle algoritmaların büyük veri setlerinde daha verimli çalışabilmesi için iyileştirmeler yapılabilir. 
-         Bu, daha geniş bir şehir ağı veya mevcut verilerin dinamik şekilde güncellenmesiyle sağlanabilir.
-    ##Duraklardaki Yolcu Sayısını Hesaplayan Sistem:
-         Duraklardaki yolcu yoğunluğuna göre rotalar önerilebilir. Duraktaki yolcu sayısını sayan ve bu veriyi almamızı sağlayan bir sistem geliştirilebilir.
-         Bu sayede, kullanıcılar daha az kalabalık olan güzergahları seçebilir ve daha rahat bir yolculuk deneyimi yaşayabilirler.
+# 5. Projeyi Geliştirme Fikirlerim
+## En az maliyetli rota fonksiyonu:
+Kullanıcılar için, zaman yerine maliyetin önemli olabileceği durumlar göz önüne alınarak, "en az maliyetli" rotayı bulan bir fonksiyon eklenebilir. 
+Maliyet; örneğin; ücretler, mesafe veya aktarma sayısı gibi faktörlere göre hesaplanabilir. Bu sayede, daha geniş bir kullanıcı kitlesine hitap edebilir.
+## Kullanıcı dostu bir arayüz:
+Proje, bir web sitesi veya mobil uygulama olarak kullanıcı dostu bir arayüzle geliştirilebilir. Bu şekilde, metroyu kullanan herkesin kolayca erişebileceği bir platform haline getirilebilir. 
+Örneğin, Moovit gibi uygulamalarla işbirliği yaparak, daha fazla kişiye ulaşılabilir ve kullanıcıların gerçek zamanlı olarak rota önerileri alması sağlanabilir.
+## Esnek rota seçme hakkı:
+Kullanıcıların daha esnek bir rota seçmesi sağlanabilir. Örneğin, kullanıcıların belirli bir istasyonu istedikleri sırayla geçmesine izin veren bir sistem eklenebilir. 
+Bu, BFS algoritmasıyla çalışacak şekilde tasarlanabilir
+## Gerçek hayat senaryoları için iyileştirmeler:
+Proje, daha fazla istasyon ve karmaşık hat bağlantılarını içerecek şekilde geliştirilebilir. Gerçek hayat durumlarında, metro ağı daha karmaşık hale gelebilir, bu nedenle algoritmaların büyük veri setlerinde daha verimli çalışabilmesi için iyileştirmeler yapılabilir. 
+Bu, daha geniş bir şehir ağı veya mevcut verilerin dinamik şekilde güncellenmesiyle sağlanabilir.
+## Duraklardaki Yolcu Sayısını Hesaplayan Sistem:
+Duraklardaki yolcu yoğunluğuna göre rotalar önerilebilir. Duraktaki yolcu sayısını sayan ve bu veriyi almamızı sağlayan bir sistem geliştirilebilir.
+Bu sayede, kullanıcılar daha az kalabalık olan güzergahları seçebilir ve daha rahat bir yolculuk deneyimi yaşayabilirler.
